@@ -136,6 +136,10 @@ case "${command}" in
 		echo "Pulling Docker images"
 		docker-compose -p n5geh pull
 		;;
+	"secrets_update")
+		echo "Pulling Docker images"
+		docker-compose -p n5geh restart iot-agent mqtt-broker entirety
+		;;
 	*)
 		echo "Command not Found."
 		echo "usage: services [create|start|stop]"
