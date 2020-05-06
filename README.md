@@ -11,7 +11,7 @@ This is a tutorial of how to use ENTIRETY for device provisioning for the N5GEH 
 ### Start
 
 ```bash
-./service start
+./services start
 ```
 This command starts all services from the docker-compose file and run setup for the demo.
 
@@ -63,7 +63,7 @@ Regenerate the Client Secret for MQTT Broker and rewrite it in the configuration
 To apply changes it is necessary to restart docker containers with services. 
 
 ```bash
-./service secrets_update
+./services secrets_update
 ```
 
 ## Entirety
@@ -327,5 +327,5 @@ The data goes to the CrateDB and stores in the table 'mtopeniot.etmeter'.
 To stop the tutorials please run following command:
 
 ```bash
-./service stop
+./services stop
 ```
