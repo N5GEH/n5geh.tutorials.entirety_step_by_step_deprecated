@@ -119,8 +119,7 @@ services:
       - grafana:/var/lib/grafana
 
   entirety:
-    build:
-      context: ../entirety
+    image: n5geh/entirety:latest
     ports:
     - "8090:80"
     environment:

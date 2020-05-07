@@ -70,7 +70,7 @@ addDatabaseIndex () {
 
 initKeycloak () {
 #	printf "Adding realm to \033[1mKeycloack\033[0m  for \033[1;34mDevice Wizard\033[0m  ..."
-    docker run --network n5geh_default -v /vagrant/tutorial.n5geh.enterity/keycloak:/data --rm python:3.7.6 /bin/bash -c 'pip install python-keycloak && python /data/keycloak_init.py'
+    docker run --network n5geh_default -v $(pwd)/keycloak:/data --rm python:3.7.6 /bin/bash -c 'pip install python-keycloak && python /data/keycloak_init.py'
 }
 
 waitForOrion () {
