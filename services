@@ -70,7 +70,8 @@ addDatabaseIndex () {
 
 initKeycloak () {
 #	printf "Adding realm to \033[1mKeycloack\033[0m  for \033[1;34mDevice Wizard\033[0m  ..."
-    docker run --network n5geh_default -v $(pwd)/keycloak:/data --rm python:3.7.6 /bin/bash -c 'pip install python-keycloak && python /data/keycloak_init.py'
+    docker run --network n5geh_default -v $(pwd)/keycloak:/data --rm python:3.7.6 /bin/bash -c 'pip install python-keycloak psycopg2 && python /data/keycloak_init.py' && \
+    docker-compose -p n5geh restart keycloak
 }
 
 waitForOrion () {
@@ -105,7 +106,7 @@ waitForIoTAgent () {
 command="$1"
 case "${command}" in
 	"help")
-        echo "usage: services [create|start|stop]"
+        echo "usage: services [create|start|stop|secrets_update]"
         ;;
 	 "start")
 		stoppingContainers

@@ -1,4 +1,5 @@
 from keycloak import KeycloakAdmin
+import psycopg2
 
 keycloack = KeycloakAdmin(server_url='http://keycloak:8080/auth/',
                           username='admin',
@@ -43,3 +44,17 @@ if user_id is None:
                            "firstName": 'IoT',
                            "lastName": 'Agent',
                            "attributes": {"mqtt_superuser": "true"}})
+
+
+conn = psycopg2.connect(
+    host='postgres',
+    port=5432,
+    dbname='keycloak',
+    user='admin',
+    password='password',
+)
+cur = conn.cursor()
+cur.execute("UPDATE REALM SET ssl_required='NONE'")
+conn.commit()
+cur.close()
+conn.close()
