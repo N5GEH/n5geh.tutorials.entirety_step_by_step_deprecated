@@ -1,3 +1,10 @@
+#
+#
+#
+# This repository is deprecated and will no longer be maintained. We recommend to switch to the succeeding app [HERE](https://github.com/N5GEH/n5geh.tools.entirety) and the according tutorial [HERE](https://github.com/N5GEH/n5geh.tutorials.entirety_step_by_step).
+#
+#
+
 # N5GEH tutorial for ENTIRETY 
 
 This is a tutorial of how to use ENTIRETY for device provisioning for the N5GEH Cloud Platform. To demonstrate the work of the components everything is configured locally. To start using the tutorial it is necessary to install Pre-requisites.
